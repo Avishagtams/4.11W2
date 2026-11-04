@@ -13,3 +13,10 @@ const { URL } = require("url");
 const urlStr = 'https://app.com/search?query=node&sort=asc';
 
 // write your code here
+const myUrl = new URL(urlStr);
+
+myUrl.searchParams.set('sort', 'desc');
+myUrl.searchParams.append('page', '3');
+myUrl.searchParams.delete('query');
+
+console.log(myUrl.href);
